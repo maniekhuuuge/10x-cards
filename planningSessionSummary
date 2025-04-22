@@ -1,0 +1,45 @@
+<conversation_summary>
+<decisions>
+1. Zdefiniowano główny problem jako czasochłonność tworzenia fiszek i dezorientację początkujących użytkowników przy optymalnym dzieleniu informacji.
+2. Ustalono, że fiszki – zarówno tworzone manualnie, jak i generowane przez AI – będą posiadały dwa pola: „przód” (do 200 znaków) i „tył” (do 500 znaków), z ściśle egzekwowaną walidacją i natychmiastowymi komunikatami błędów.
+3. Fiszki będą przechowywane wyłącznie w postaci tekstowej, bez dodatkowych metadanych czy opcji formatowania.
+4. Zarządzanie kontem ograniczone jest do podstawowych operacji (rejestracja, zmiana hasła, usunięcie konta) bez dodatkowych zabezpieczeń jak weryfikacja adresu email.
+5. Proces generowania fiszek przez AI będzie inicjowany ręcznie przez użytkownika, korzystając wyłącznie z domyślnych ustawień, z wyświetlaniem statusu operacji i minimalną animacją.
+6. Kandydaci na fiszki generowani przez AI będą poddawani recenzji, umożliwiającej proste operacje: akceptację, edycję (z potwierdzeniem przez dialog) lub odrzucenie, przy czym edycja nadpisuje istniejące dane.
+7. Interfejs użytkownika będzie prezentował jednolite komunikaty sukcesu dla wszystkich operacji.
+8. Operacje generowania fiszek przez AI będą logowane w dedykowanej tabeli w bazie danych bez dodatkowych funkcji filtrowania lub wyszukiwania.
+9. MVP nie przewiduje funkcji eksportu danych, integracji z zewnętrznymi API ani responsywności pod kątem urządzeń mobilnych.
+10. W systemie zostanie wprowadzone pole „wkład” – osobny komponent formularza, przeznaczony wyłącznie do przekazywania tekstowego wkładu do AI. Pole to ma ścisły limit 10 000 znaków, walidację działającą w czasie rzeczywistym z natychmiastowym wyświetlaniem komunikatów błędów, a jego zawartość będzie używana tylko jako wkład dla AI. Użytkownik ma możliwość edycji tego pola przed wysłaniem danych.
+</decisions>
+
+<matched_recommendations>
+1. Wdrożenie ściśle egzekwowanej walidacji pól fizycznych (przód, tył, wkład) z natychmiastowym feedbackiem o przekroczeniu limitów.
+2. Utrzymanie uproszczonej struktury fiszek bez dodatkowych metadanych ani opcji formatowania.
+3. Realizacja podstawowych funkcji zarządzania kontem bez dodatkowych zabezpieczeń.
+4. Implementacja prostego procesu recenzji fiszek generowanych przez AI (opcja akceptacji, edycji z potwierdzeniem i odrzucenia).
+5. Zapewnienie jednolitych komunikatów sukcesu i statusu operacji, wzbogaconych minimalną animacją podczas generowania fiszek.
+6. Przechowywanie logów generacji fiszek w dedykowanej tabeli o ograniczonej funkcjonalności analizy.
+7. Wykorzystanie wyłącznie domyślnych ustawień podczas ręcznego uruchamiania procesu generowania fiszek przez AI.
+8. Wprowadzenie osobnego pola „wkład” do przekazywania wejścia dla AI, zgodnie z ustalonymi wymaganiami.
+</matched_recommendations>
+
+<prd_planning_summary>
+W kontekście MVP produkt ma na celu uproszczenie oraz przyspieszenie procesu tworzenia fiszek. Kluczowe wymagania funkcjonalne obejmują:
+• Formularz tworzenia fiszek z dwoma polami:
+  - „Przód” (do 200 znaków) oraz „Tył” (do 500 znaków) – z natychmiastową walidacją oraz komunikatami błędów w przypadku przekroczenia limitu.
+• Oddzielny komponent formularza – pole „wkład”:
+  - Przeznaczone wyłącznie do przesyłania danych wejściowych do modelu AI.
+  - Ścisły limit 10 000 znaków, walidacja w czasie rzeczywistym, możliwość edycji przed wysłaniem danych.
+• Proces generowania fiszek przez AI:
+  - Inicjowany ręcznie przez użytkownika, korzystający z domyślnych ustawień, ze statusem akcji (informacja o postępie i minimalna animacja informująca o działaniu).
+• Mechanizm recenzji kandydatów wygenerowanych przez AI:
+  - Umożliwiający użytkownikowi wybór opcji: akceptacja, edycja po potwierdzeniu (nadpisanie istniejących danych) lub odrzucenie.
+• Podstawowe funkcje zarządzania kontem (rejestracja, zmiana hasła, usunięcie konta) bez dodatkowych zabezpieczeń.
+• Fiszki będą przechowywane wyłącznie jako tekst, a operacje generacji będą logowane w dedykowanej tabeli w bazie.
+Kryterium sukcesu to uzyskanie ponad 75% akceptacji fiszek generowanych przez AI, monitorowanej na podstawie logów.
+</prd_planning_summary>
+
+<unresolved_issues>
+Brak nierozwiązanych kwestii – wszystkie aspekty zostały szczegółowo omówione i potwierdzone przez uczestników rozmowy.
+</unresolved_issues>
+</conversation_summary>
