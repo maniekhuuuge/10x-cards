@@ -116,8 +116,46 @@ Kryteria akceptacji:
 - Dane logowania są przesyłane przy użyciu bezpiecznych protokołów.
 - System zapewnia, że dostęp do konta uzyskują wyłącznie autoryzowani użytkownicy.
 
+US-011
+Tytuł: Sesja nauki fiszek
+Opis: Jako użytkownik chcę móc rozpocząć sesję nauki, aby przeglądać zaplanowane fiszki jedna po drugiej, odsłaniając ich odpowiedzi.
+Kryteria akceptacji:
+- Użytkownik inicjuje sesję nauki (np. przez dedykowany przycisk).
+- Jeśli brak fiszek do powtórki na dany dzień, system wyświetla odpowiedni komunikat.
+- System prezentuje "przód" pierwszej fiszki zaplanowanej do powtórki.
+- Użytkownik ma możliwość odsłonięcia "tyłu" fiszki.
+- Po odsłonięciu "tyłu", użytkownik widzi przycisk "Następna".
+- Kliknięcie przycisku "Następna" powoduje przejście do kolejnej fiszki w sesji.
+- Sesja kończy się po przejrzeniu wszystkich zaplanowanych na dany dzień fiszek, a system wyświetla komunikat o zakończeniu sesji.
+
 ## 6. Metryki sukcesu
 Metryki:
 - Co najmniej 75% fiszek generowanych przez AI zostanie zaakceptowanych przez użytkowników.
 - 75% wszystkich tworzonych fiszek powinno pochodzić z funkcji generowania przez AI.
 - Sukces operacji generowania fiszek monitorowany jest poprzez logi przechowywane w dedykowanej tabeli bazy danych. 
+
+## 7. Opisy widoków
+
+### Widok Sesji Nauki (US-011)
+
+**Cel:** Umożliwienie użytkownikowi przeglądania fiszek zaplanowanych do powtórki w ramach sesji nauki.
+
+**Elementy interfejsu:**
+
+1.  **Obszar wyświetlania fiszki:**
+    *   **Stan początkowy:** Wyświetla tekst z pola "Przód" aktualnie powtarzanej fiszki.
+    *   Poniżej znajduje się przycisk "Pokaż odpowiedź".
+    *   **Po kliknięciu "Pokaż odpowiedź":**
+        *   Tekst z pola "Przód" pozostaje widoczny.
+        *   Poniżej pojawia się tekst z pola "Tył" tej samej fiszki.
+        *   Przycisk "Pokaż odpowiedź" znika lub staje się nieaktywny.
+        *   Pojawia się przycisk "Następna".
+
+2.  **Przycisk "Następna":**
+    *   Widoczny tylko po odsłonięciu odpowiedzi ("Tył") fiszki.
+    *   **Akcja:** Kliknięcie powoduje załadowanie następnej fiszki w sesji (powrót do stanu początkowego z nową fiszką) lub wyświetlenie komunikatu o zakończeniu sesji, jeśli była to ostatnia fiszka.
+
+**Stany specjalne:**
+
+*   **Brak fiszek do powtórki:** Jeśli użytkownik inicjuje sesję, ale nie ma żadnych fiszek zaplanowanych na dany dzień, zamiast widoku fiszki wyświetlany jest komunikat informujący o tym (np. "Gratulacje! Nie masz więcej fiszek do powtórzenia na dziś.").
+*   **Koniec sesji:** Po przejrzeniu ostatniej fiszki i kliknięciu "Następna", wyświetlany jest komunikat o zakończeniu sesji (np. "Sesja zakończona! Wszystkie fiszki na dziś zostały powtórzone."). 
